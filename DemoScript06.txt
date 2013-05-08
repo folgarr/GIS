@@ -1,0 +1,28 @@
+; Demo script 4
+;
+; Specify boundaries of coordinate space:
+world	1090000W	1050000W	370000N	410000N
+;
+; Import a sizeable number of records:
+import	CO_Ouray.txt
+;
+; Take a look at the indices, if you like:
+;debug	quad
+;debug	hash
+;
+; Perform some square-region searches; each searches a
+; larger region centered at the same point:
+what_is_in	380108N	1074035W	15	15
+what_is_in	380108N	1074035W	30	30
+what_is_in	380108N	1074035W	60	60
+what_is_in	380108N	1074035W	240	240
+;
+; Now, perform some searches with non-square regions:
+what_is_in	380206N	1073757W	30	60
+what_is_in	380206N	1073757W	240	15
+what_is_in	380206N	1073757W	60	600
+;
+what_is_in	380122N	1074017W	30	6
+;
+; Exit:
+quit	

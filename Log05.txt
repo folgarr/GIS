@@ -1,0 +1,65 @@
+; Demo script 4
+;
+; Specify boundaries of coordinate space:
+Command:	world	1090000W	1050000W	370000N	410000N
+
+GIS Program by Carlos Folgar
+
+dbFile:	db05.txt
+Script:	DemoScript05.txt
+log:	Log05.txt
+Quadtree children order: SW SE NE NW
+
+World Boundaries are set to:
+		147600
+-392400		-378000
+		133200
+--------------------------------------------------------------------------------
+;
+; Import a sizeable number of records:
+Command:	import	CO_Ouray.txt
+
+Imported Features by name: 567
+Longest probe sequence: 10
+Imported Features by location: 567
+--------------------------------------------------------------------------------
+;
+; Take a look at the indices, if you like:
+;debug	quad
+;debug	hash
+;
+; Perform a couple of some no-match searches by name/state:
+Command:	what_is	Not There Summit	CO
+
+Nothing found!
+--------------------------------------------------------------------------------
+Command:	what_is	Sniffles Creek	CO
+
+Nothing found!
+--------------------------------------------------------------------------------
+;
+; Perform a couple of some no-match searches by location:
+Command:	what_is_at	390000N	1070000W
+
+Nothing found!
+--------------------------------------------------------------------------------
+Command:	what_is_at	370000N	1090000W
+
+Nothing found!
+--------------------------------------------------------------------------------
+;
+; Perform a couple of some no-match region searches:
+Command:	what_is_in	390000N	1070000W	15	15
+
+Nothing found!
+--------------------------------------------------------------------------------
+Command:	what_is_in	405900N	1085900W	30	120
+
+Nothing found!
+--------------------------------------------------------------------------------
+;
+; Exit:
+Command:	quit	
+
+Terminating execution of commands.
+--------------------------------------------------------------------------------

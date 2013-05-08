@@ -1,0 +1,14 @@
+; Demo Script 1
+;
+; Specify boundaries of coordinate space:
+world	0802600W	0802100W	370900N	371400N
+;
+; Import some data:
+import	VA_VTCampus.txt
+;
+; Check the location indices:
+debug	quad
+debug	hash
+;
+; Exit
+quit	

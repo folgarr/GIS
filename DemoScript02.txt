@@ -1,0 +1,31 @@
+; Demo script 2
+;
+; Specify boundaries of coordinate space:
+world	1090000W	1050000W	370000N	410000N
+;
+; Import a sizeable number of records:
+import	CO_Ouray.txt
+;
+; Take a look at the indices:
+debug	quad
+debug	hash
+;
+; Perform some searches by name/state:
+what_is	United States Mountain	CO
+what_is	-l	United States Mountain	CO
+what_is	Cottonwood Creek	CO
+what_is	-l	Cottonwood Creek	CO
+;
+; Perform some searches by location:
+what_is_at	380145N	1074019W
+what_is_at	375437N	1074146W
+;
+; Perform some region searches:
+what_is_in	-c	380122N	1074015W	15	15
+what_is_in	380122N	1074015W	15	15
+;
+; Test the long display:
+what_is_in	-l	380122N	1074015W	15	15
+;
+; Exit:
+quit	

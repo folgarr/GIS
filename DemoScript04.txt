@@ -1,0 +1,92 @@
+; Demo script 3
+;
+; Specify boundaries of coordinate space:
+world	1090000W	1050000W	370000N	410000N
+;
+; Import a sizeable number of records:
+import	CO_Ouray.txt
+;
+; Take a look at the indices, if you like:
+;debug	quad
+;debug	hash
+;
+; Perform a few some single-match searches by name/state:
+what_is	United States Mountain	CO
+; 
+; Check the pool:
+debug	pool
+;
+what_is	The Blowout	CO
+what_is	Skyrocket Creek	CO
+what_is	Kerr-Ouray Number Two Mine	CO
+what_is	Telluride Peak	CO
+; 
+; Check the pool; there should be five records, matching
+; the preceding searches, with Telluride Peak at the MRU
+; position and US Mountain at the LRU position:
+debug	pool
+;
+; Now, let's fill the pool:
+what_is	Thistledown	CO
+what_is	Chaffe Gulch Dentention Number 6 Dam	CO
+what_is	Difficulty Creek	CO
+what_is	Dallas	CO
+what_is	Wildhorse Peak	CO
+what_is	Terrible Mine	CO
+what_is	Devils Armchair	CO
+what_is	Little Balm of Gilead Mine	CO
+what_is	Chief Ouray and Chipeta Memorial	CO
+what_is	Paradox Road	CO
+what_is	American Girl Mine	CO
+what_is	Marshall Pass	CO
+what_is	Dipping Vat Creek	CO
+what_is	South Baldy	CO
+what_is	Alkali Ditch Number 2	CO
+;
+; The pool should now be full and the records should be exactly in
+; the order shown:
+debug	pool
+;
+; Let's hit the second record in the pool, and see if it
+; moves to the top:
+what_is	South Baldy	CO
+debug	pool
+;
+; Now let's hit a record in the middle of the pool, and see if it
+; moves to the top:
+what_is	Devils Armchair	CO
+debug	pool
+;
+; Now let's hit the record at the end of the pool, and see if it
+; moves to the top:
+what_is	United States Mountain	CO
+debug	pool
+; 
+; Now trigger a replacement by searching for a feature that's not
+; in the pool, and see if the pool is updated correctly, the old
+; last record should be gone and the new record should be at the
+; beginning:
+what_is	Blaine Draw	CO
+debug	pool
+;
+; Load two more new records:
+what_is	Bridalveil Creek	CO
+what_is	Pleasant Valley Canyon	CO
+debug	pool
+;
+; And load a few more new records:
+what_is	Corkscrew Gulch	CO
+what_is	Galena Lion Gulch	CO
+what_is	Starvation Creek	CO
+what_is	Alkali Ditch Number 1	CO
+debug	pool
+;
+; And, finally, shuffle things with a few hits:
+what_is	Terrible Mine	CO
+what_is	Devils Armchair	CO
+what_is	Paradox Road	CO
+what_is	Dallas	CO
+debug	pool
+;
+; Exit:
+quit	

@@ -1,0 +1,33 @@
+; Demo script 7
+;
+; Specify boundaries of coordinate space:
+world	1100000W	1020000W	303000N	383000N
+;
+; Import a sizeable number of records;
+;   This may take some time... allow at least a few minutes for the
+;   student's solution to complete this one.
+import	NM_All.txt
+;
+; Uncomment if you REALLY want to take a look at the indices:
+;debug	quad
+;debug	hash
+;
+; Perform some name/state searches:
+what_is	Nester Draw	NM
+what_is	Screaming Left Hand Turn	NM
+what_is	Window Rock	NM
+what_is	Buena Vista	NM
+;
+; Now do some location searches:
+what_is_at	363957N	1054049W
+what_is_at	351018N	1034328W
+what_is_at	362846N	1085222W
+what_is_at	334236N	1055604W
+;
+; And some region searches:
+what_is_in	362846N	1085220W	120	120
+what_is_in	333859N	1062731W	120	120
+what_is_in	345326N	1073457W	60	60
+;
+; Exit:
+quit	
